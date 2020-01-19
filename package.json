@@ -2,14 +2,16 @@
   "fitbit": {
     "appUUID": "8c7b2533-7aaa-40be-b76c-da77718ec403",
     "appType": "clockface",
-    "appDisplayName": "Cool Facebit",
+    "appDisplayName": "Calendar Facebit",
     "iconFile": "resources/icon.png",
     "wipeColor": "#ff9800",
     "requestedPermissions": [
       "access_heart_rate",
       "access_location",
       "access_internet",
-      "access_activity"
+      "access_activity",
+      "access_calendar",
+      "run_background"
     ],
     "buildTargets": [
       "higgs",
@@ -18,21 +20,22 @@
     ],
     "i18n": {
       "en": {
-        "name": "Cool Facebit"
+        "name": "Calendar Facebit"
       }
     },
     "defaultLanguage": "en-US"
   },
   "devDependencies": {
-    "@fitbit/sdk": "^3.1.3"
+    "@fitbit/sdk": "~4.1.0",
+    "@fitbit/sdk-cli": "^1.7.1"
   },
   "dependencies": {
-    "@fitbit/sdk-cli": "^1.7.1",
     "fp-ts": "^2.2.0",
     "gulp-zip": "^5.0.1",
     "io-ts": "^2.0.1"
   },
   "scripts": {
-    "build": "fitbit-build"
+    "build": "fitbit-build",
+    "debug": "fitbit"
   }
 }
