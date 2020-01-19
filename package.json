@@ -16,7 +16,8 @@
     "buildTargets": [
       "higgs",
       "meson",
-      "gemini"
+      "gemini",
+      "mira"
     ],
     "i18n": {
       "en": {
@@ -30,7 +31,10 @@
     "@fitbit/sdk-cli": "^1.7.1"
   },
   "dependencies": {
+    "@types/cbor": "^5.0.0",
+    "@types/number-is-nan": "^1.0.0",
     "fp-ts": "^2.2.0",
+    "gulp": "^4.0.2",
     "gulp-zip": "^5.0.1",
     "io-ts": "^2.0.1"
   },

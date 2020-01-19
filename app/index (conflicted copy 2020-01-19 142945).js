@@ -72,13 +72,12 @@ function updateActivity() {
   let background = document.getElementById("background");
   const distanceData = document.getElementById("distance-data");
   const caloriesData = document.getElementById("calories-data");
-  const elevationData = document.getElementById("elevation-data");
+  const elevationData = deviceType == "Versa Lite" ? document.getElementById("active-data") : document.getElementById("elevation-data");
   const stepsData = document.getElementById("steps-data");
 
   const distanceFill = document.getElementById("distance");
   const caloriesFill = document.getElementById("calories");
-  const elevationFill = document.getElementById("floors");
-  const elevationImage = document.getElementById("elevation-img");
+  const elevationFill = deviceType == "Versa Lite" ? document.getElementById("active") : document.getElementById("floors");
   const stepsFill = document.getElementById("steps");
   const fullWidth = deviceType == "Ionic" ? 155 : 139;
   const baseWidth = 30;
@@ -90,6 +89,7 @@ function updateActivity() {
       distanceData.text = (today.adjusted.distance / 1000).toFixed(1);
     }
     caloriesData.text = today.adjusted.calories;
+    elevationData.text = today.adjusted.elevationGain;
     stepsData.text = today.adjusted.steps;
 
 
@@ -105,21 +105,10 @@ function updateActivity() {
       caloriesFill.width = today.adjusted.calories / goals.calories * (fullWidth - baseWidth) + baseWidth;
     }
 
-    if (today.local.elevationGain !== undefined) {
-      elevationData.text = today.adjusted.elevationGain;
-      if (goals.elevationGain < today.adjusted.elevationGain){
-        elevationFill.width = fullWidth
-      } else {
-        elevationFill.width = today.adjusted.elevationGain / goals.elevationGain * (fullWidth - baseWidth) + baseWidth;
-      }
+    if (goals.elevationGain < today.adjusted.elevationGain){
+      elevationFill.width = fullWidth
     } else {
-      elevationData.text = today.adjusted.activeMinutes;
-      elevationImage.href = 'assets/activities/activity.png'
-      if (goals.activeMinutes < today.adjusted.activeMinutes){
-        elevationFill.width = fullWidth
-      } else {
-        elevationFill.width = today.adjusted.activeMinutes / goals.activeMinutes * (fullWidth - baseWidth) + baseWidth;
-      }
+      elevationFill.width = today.adjusted.elevationGain / goals.elevationGain * (fullWidth - baseWidth) + baseWidth;
     }
 
     if (goals.steps < today.adjusted.steps){
