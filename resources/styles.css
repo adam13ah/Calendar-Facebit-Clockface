@@ -68,6 +68,23 @@
   height: 1%;
 }
 
+#title {
+  x: 50%;
+  y: $+20;
+  font-family: System-Bold;
+}
+
+#details {
+  font-size: 28;
+  font-family: System-Regular;
+  font-weight: regular;
+  text-length: 128;
+  text-anchor: middle;
+  fill: white;
+  x: 0;
+  y: $-15;
+}
+
 .sensor-data {
   font-family: System-Light;
   text-anchor: middle;

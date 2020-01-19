@@ -30,7 +30,22 @@
         fill="white" 
         class="sensor-data"
         x="86%" y="73%">{ ... }</text>
+  <rect id="separator" x="40%" y="75%" fill="white"/>
   
+  <text id="title"
+        fill="white"
+        font-size="24"
+        font-family="Colfax-Black"
+        text-anchor="middle"
+        text-length="20"
+        x="50%" y="85%">Appointment Title</text>
+  <textarea id="details"
+        font-family="Colfax-Light"
+        fill="white"
+        text-anchor="start"
+        x="40%" y="90%"
+        rows="2">Appointment Date @ Appointment Location</textarea>
+
 <!--  Steps  -->
   <rect id="steps-background" 
         x="-10%" y="12%" rx="20" ry="20"/>
