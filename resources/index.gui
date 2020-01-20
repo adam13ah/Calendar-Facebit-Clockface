@@ -1,6 +1,6 @@
 <svg>
-  <rect id="background" pointer-events="all"/>
-  
+  <rect id="background" x="0" y="0" width="100%" height="100%" pointer-events="all" >
+    
   <text id="date" x="67%" y="20%"
       fill="#ffffff" font-size="20" font-family="Colfax-Light"
       text-anchor="middle" text-length="20">Jan 01</text>
@@ -35,15 +35,15 @@
   <text id="title"
         font-size="20"
         font-family="Colfax-Black"
-        text-anchor="middle"
         text-length="17"
+        text-anchor="middle"
         x="67%" y="70%">Appointment Title</text>
   <textarea id="details"
         font-family="Colfax-Light"
         font-size="20"
-        fill="white"
-        width="100%-10"
-        x="37%+10" y="75%"
+        width="65%-20"
+        text-length="64"
+        x="36%+10" y="75%"
         rows="3">Appointment Date @ Appointment Location</textarea>
 
 <!--  Steps  -->
@@ -117,4 +117,5 @@
         class="sensor-data"
         text-anchor="end"
         x="21%" y="87%">{ ... }</text>
+  </rect>
 </svg>

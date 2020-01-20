@@ -23,6 +23,7 @@ display.addEventListener("change", () => {
   display.on ? sensors.map(sensor => sensor.start()) : sensors.map(sensor => sensor.stop());
   if (display.on == true){
     updateActivity();
+    renderAppointment();
   }
 });
 
@@ -104,7 +105,8 @@ function updateActivity() {
     } else {
       caloriesFill.width = today.adjusted.calories / goals.calories * (fullWidth - baseWidth) + baseWidth;
     }
-
+    
+    // If there's an elevationGain display, otherwise sub activity
     if (today.local.elevationGain !== undefined) {
       elevationData.text = today.adjusted.elevationGain;
       if (goals.elevationGain < today.adjusted.elevationGain){
